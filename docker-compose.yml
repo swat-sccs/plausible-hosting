@@ -26,6 +26,7 @@ services:
 
   plausible:
     image: plausible/analytics:latest
+    restart: always
     command: sh -c "sleep 10 && /entrypoint.sh db createdb && /entrypoint.sh db migrate && /entrypoint.sh db init-admin && /entrypoint.sh run"
     restart: always 
     depends_on:
